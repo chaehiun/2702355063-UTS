@@ -28,13 +28,12 @@ loan_intent = st.selectbox("Tujuan Pinjaman", ["EDUCATION", "HOMEIMPROVEMENT", "
 loan_int_rate = st.number_input("Suku Bunga Pinjaman (%)", value=10.5)
 loan_percent_income = loan_amnt / (person_income + 1e-6)
 cb_person_cred_hist_length = st.number_input("Lama Riwayat Kredit (tahun)", value=3)
-credit_score = st.selectbox("Skor Kredit", ["Buruk", "Baik"])
+credit_score = st.number_input("Skor Kredit (credit_score)", min_value=300, max_value=850, value=600)
 previous_loan_defaults_on_file = st.selectbox("Riwayat Gagal Bayar", ["No", "Yes"])
 
 # Map categorical to numerical
 gender_map = {"male": 1, "female": 0}
 edu_map = {"High School": 0, "Bachelor": 1, "Master": 2,"Associate": 3, "Doctorate": 4}
-score_map = {"Buruk": 0, "Baik": 1}
 default_map = {"No": 0, "Yes": 1}
 
 loan_intents = ["EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE"]
@@ -50,7 +49,7 @@ input_data = {
     'loan_int_rate': loan_int_rate,
     'loan_percent_income': loan_percent_income,
     'cb_person_cred_hist_length': cb_person_cred_hist_length,
-    'credit_score': score_map[credit_score],
+    'credit_score': credit_score,
     'previous_loan_defaults_on_file': default_map[previous_loan_defaults_on_file],
 }
 
