@@ -38,7 +38,7 @@ score_map = {"Buruk": 0, "Baik": 1}
 default_map = {"No": 0, "Yes": 1}
 
 loan_intents = ["EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE"]
-home_ownerships = ["RENT", "OWN", "MORTGAGE", "OTHER"]
+home_ownerships = ["RENT", "OWN", "OTHER"]
 
 input_data = {
     'person_age': person_age,
