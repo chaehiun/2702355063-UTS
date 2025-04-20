@@ -18,24 +18,24 @@ st.title("Loan Approval Prediction")
 # Input form
 st.subheader("Masukkan Data Calon Peminjam:")
 person_age = st.number_input("Umur", min_value=18, max_value=100, value=30)
-person_gender = st.selectbox("Jenis Kelamin", ["Laki-laki", "Perempuan"])
+person_gender = st.selectbox("Jenis Kelamin", ["male", "female"])
 person_education = st.selectbox("Pendidikan", ["Lulusan SMA", "Lulusan Sarjana"])
 person_income = st.number_input("Pendapatan per Tahun", value=50000)
 person_emp_exp = st.slider("Pengalaman Kerja (tahun)", 0, 40, 5)
+home_ownership = st.selectbox("Status Tempat Tinggal", ["OWN", "RENT", "OTHER"])
 loan_amnt = st.number_input("Jumlah Pinjaman", value=10000)
+loan_intent = st.selectbox("Tujuan Pinjaman", ["EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE"])
 loan_int_rate = st.number_input("Suku Bunga Pinjaman (%)", value=10.5)
 loan_percent_income = loan_amnt / (person_income + 1e-6)
 cb_person_cred_hist_length = st.number_input("Lama Riwayat Kredit (tahun)", value=3)
 credit_score = st.selectbox("Skor Kredit", ["Buruk", "Baik"])
-previous_loan_defaults_on_file = st.selectbox("Riwayat Gagal Bayar", ["Tidak", "Ya"])
-loan_intent = st.selectbox("Tujuan Pinjaman", ["EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE"])
-home_ownership = st.selectbox("Status Tempat Tinggal", ["OWN", "RENT", "OTHER"])
+previous_loan_defaults_on_file = st.selectbox("Riwayat Gagal Bayar", ["No", "Yes"])
 
 # Map categorical to numerical
-gender_map = {"Laki-laki": 1, "Perempuan": 0}
+gender_map = {"male": 1, "female": 0}
 edu_map = {"Lulusan SMA": 0, "Lulusan Sarjana": 1}
 score_map = {"Buruk": 0, "Baik": 1}
-default_map = {"Tidak": 0, "Ya": 1}
+default_map = {"No": 0, "Yes": 1}
 
 loan_intents = ["EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE"]
 home_ownerships = ["OTHER", "OWN", "RENT"]
