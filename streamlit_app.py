@@ -22,7 +22,7 @@ person_gender = st.selectbox("Jenis Kelamin", ["male", "female"])
 person_education = st.selectbox("Pendidikan", ["High School", "Bachelor", "Master","Associate", "Doctorate"])
 person_income = st.number_input("Pendapatan per Tahun", value=50000)
 person_emp_exp = st.slider("Pengalaman Kerja (tahun)", 0, 40, 5)
-home_ownership = st.selectbox("Status Tempat Tinggal", ["RENT", "OWN", "OTHER"])
+home_ownership = st.selectbox("Status Tempat Tinggal", ["OWN", "RENT", "OTHER"])
 loan_amnt = st.number_input("Jumlah Pinjaman", value=10000)
 loan_intent = st.selectbox("Tujuan Pinjaman", ["EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE"])
 loan_int_rate = st.number_input("Suku Bunga Pinjaman (%)", value=10.5)
@@ -38,7 +38,7 @@ score_map = {"Buruk": 0, "Baik": 1}
 default_map = {"No": 0, "Yes": 1}
 
 loan_intents = ["EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE"]
-home_ownerships = ["RENT", "OWN", "OTHER"]
+home_ownerships = ["OTHER", "OWN", "RENT"]
 
 input_data = {
     'person_age': person_age,
@@ -71,6 +71,6 @@ if st.button("Prediksi"):
 # Tambahkan test case
 st.sidebar.header("💡 Test Case")
 if st.sidebar.button("Test Case 1"):
-    st.write("🔹 female, Master, Pendapatan: 71948, Pinjaman: 35000, Skor Kredit: 561, Tujuan: PERSONAL")
+    st.write("🔹 Laki-laki, Sarjana, Pendapatan: 60K, Pinjaman: 10K, Skor Kredit: Baik, Tujuan: PERSONAL")
 if st.sidebar.button("Test Case 2"):
     st.write("🔹 Perempuan, SMA, Pendapatan: 20K, Pinjaman: 15K, Skor Kredit: Buruk, Tujuan: MEDICAL")
