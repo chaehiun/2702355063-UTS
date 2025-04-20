@@ -19,7 +19,7 @@ st.title("Loan Approval Prediction")
 st.subheader("Masukkan Data Calon Peminjam:")
 person_age = st.number_input("Umur", min_value=18, max_value=100, value=30)
 person_gender = st.selectbox("Jenis Kelamin", ["male", "female"])
-person_education = st.selectbox("Pendidikan", ["Lulusan SMA", "Lulusan Sarjana"])
+person_education = st.selectbox("Pendidikan", ["High School", "Bachelor", "Master","Associate", "Doctorate"])
 person_income = st.number_input("Pendapatan per Tahun", value=50000)
 person_emp_exp = st.slider("Pengalaman Kerja (tahun)", 0, 40, 5)
 home_ownership = st.selectbox("Status Tempat Tinggal", ["OWN", "RENT", "OTHER"])
@@ -33,7 +33,7 @@ previous_loan_defaults_on_file = st.selectbox("Riwayat Gagal Bayar", ["No", "Yes
 
 # Map categorical to numerical
 gender_map = {"male": 1, "female": 0}
-edu_map = {"Lulusan SMA": 0, "Lulusan Sarjana": 1}
+edu_map = {"High School": 0, "Bachelor": 1, "Master": 2,"Associate": 3, "Doctorate": 4}
 score_map = {"Buruk": 0, "Baik": 1}
 default_map = {"No": 0, "Yes": 1}
 
