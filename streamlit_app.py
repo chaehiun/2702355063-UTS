@@ -24,7 +24,7 @@ person_income = st.number_input("Pendapatan per Tahun", value=50000)
 person_emp_exp = st.slider("Pengalaman Kerja (tahun)", 0, 40, 5)
 home_ownership = st.selectbox("Status Tempat Tinggal", ["OWN", "RENT", "OTHER"])
 loan_amnt = st.number_input("Jumlah Pinjaman", value=10000)
-loan_intent = st.selectbox("Tujuan Pinjaman", ["EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE"])
+loan_intent = st.selectbox("Tujuan Pinjaman", ["EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE","DEBTCONSOLIDATION"])
 loan_int_rate = st.number_input("Suku Bunga Pinjaman (%)", value=10.5)
 loan_percent_income = loan_amnt / (person_income + 1e-6)
 cb_person_cred_hist_length = st.number_input("Lama Riwayat Kredit (tahun)", value=3)
@@ -37,7 +37,7 @@ edu_map = {"High School": 0, "Bachelor": 1, "Master": 2,"Associate": 3, "Doctora
 score_map = {"Buruk": 0, "Baik": 1}
 default_map = {"No": 0, "Yes": 1}
 
-loan_intents = ["EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE"]
+loan_intents = ["EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE", "DEBTCONSOLIDATION"]
 home_ownerships = ["OTHER", "OWN", "RENT"]
 
 input_data = {
